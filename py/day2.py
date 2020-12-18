@@ -1,7 +1,9 @@
 
 def main():
 	f = open("/home/detmer/programming/aoc/aoc_input/input_day2.txt", "r")
-	valid_pass = 0
+	valid_pass_part1 = 0
+	valid_pass_part2 = 0
+
 	for line in f:
 
 		#splitting the strings into workable parts
@@ -28,9 +30,15 @@ def main():
 		#check if password is valid according to the password policy
 
 		if(amount >= minimum and amount <= maximum):
-			valid_pass+=1
+			valid_pass_part1+=1
 
-	print(valid_pass)
+		#part two
+		#checking if the character is at specific location according to the password policy
+		if password[minimum] == letter and password[maximum] != letter or password[minimum] != letter and password[maximum] == letter:
+			valid_pass_part2+=1
+
+	print("Valid passwords part one: " + str(valid_pass_part1))
+	print("Valid passwords part two: " + str(valid_pass_part2))
 
 
 if __name__ == '__main__':
