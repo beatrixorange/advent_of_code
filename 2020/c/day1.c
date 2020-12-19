@@ -10,7 +10,7 @@ int main(void){
 	int expenses[200];
 	int i = 0;
 
-	filePointer = fopen("/home/detmer/programming/aoc/aoc_input/input_day1.txt", "r");
+	filePointer = fopen("/home/detmer/programming/aoc/2020/aoc_input/input_day1.txt", "r");
 
 	while(fgets(buffer, bufferLength, filePointer)) {
     	expenses[i] = atoi(buffer);
